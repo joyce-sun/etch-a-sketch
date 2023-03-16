@@ -2,7 +2,13 @@ const grid = document.querySelector('.grid');
 const changeGridSize = document.querySelector('.grid-size')
 
 changeGridSize.addEventListener('click', () => {
-    alert("Enter Grid Size")
+    let size = prompt("Enter Grid Size (up to 100)")
+    if (size > 100 || isNaN(size)) {
+        window.alert("ERROR: Please choose a number up to 100")
+    }
+    else {
+        createGrid(size);
+    }
 } )
 
 function createGrid(size) {
@@ -14,6 +20,8 @@ function createGrid(size) {
         gridSquare.classList.add("gridElement");
         grid.appendChild(gridSquare);
     }
+    drawOnGrid();
+
 }
 
 function drawOnGrid() {
@@ -26,6 +34,3 @@ function drawOnGrid() {
     })
 
 }
-
-createGrid(16)
-drawOnGrid()
