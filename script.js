@@ -11,4 +11,16 @@ function createGrid(rows, cols) {
     }
 }
 
-createGrid(4,4)
+function drawOnGrid() {
+    let boxes = document.querySelectorAll('.gridElement');
+
+    boxes.forEach((box) => {
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = 'black';
+        })
+    })
+
+}
+
+createGrid(16,16)
+drawOnGrid()
