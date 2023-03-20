@@ -1,6 +1,25 @@
+let COLOR = 'black';
 const DEFAULT = 16;
 const grid = document.querySelector('.grid');
 const changeGridSize = document.querySelector('.grid-size')
+const blackMode = document.querySelector('.black-mode')
+const pinkMode = document.querySelector('.pink-mode')
+const rbgMode = document.querySelector('.rainbow-mode')
+
+blackMode.addEventListener('click', () => {
+    COLOR = 'black';
+})
+
+pinkMode.addEventListener('click', () => {
+    COLOR = '#e94196';
+})
+
+pinkMode.addEventListener('click', () => {
+    let randomColor = randomRGB();
+    COLOR = randomColor;
+})
+
+
 
 changeGridSize.addEventListener('click', () => {
     let size = prompt("Enter Grid Size (up to 100)")
@@ -43,7 +62,7 @@ function drawOnGrid() {
     boxes.forEach((box) => {
         box.addEventListener('mousemove', () => {
             if (isClicked === true) {
-                box.style.backgroundColor = 'black';
+                box.style.backgroundColor = COLOR;
             }
         })
     })
@@ -52,5 +71,13 @@ function drawOnGrid() {
 function clearGrid() {
     grid.innerHTML = "";
 }
+
+function randomRGB() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + "," + g + "," + b + ")";
+}
+
 
 createGrid(DEFAULT);
