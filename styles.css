@@ -14,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 50px;
 }
 
 .frame {
@@ -36,17 +37,6 @@ body {
     color: #ffe2ed;
 }
 
-.frame button {
-    margin: 35px;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    padding: 6px 24px;
-    box-shadow: 6px 5px 8px 0.5px rgba(0,0,0,0.5);
-    font-family: 'rondo';
-    font-size: 24px;
-}
-
 .grid {
     display: grid;
     margin: auto;
@@ -59,4 +49,38 @@ body {
 .gridElement {
     user-select: none;
     border: 0.1px solid black;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container button {
+    margin: 35px;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    padding: 6px 20px;
+    box-shadow: 6px 5px 8px 0.5px rgba(0,0,0,0.5);
+    font-family: 'rondo';
+    font-size: 18px;
+}
+
+.knob {
+    height: 75px;
+    width: 75px;
+    background-color: #ffe2ed;
+    box-shadow: 6px 5px 8px 0.5px rgba(0,0,0,0.5);
+    border-radius: 50%; 
+    text-align: center;
+    font-weight: 100px;
+}
+
+#left-knob {
+    margin-right: 160px;
+}
+
+#right-knob {
+    margin-left: 160px;
 }
