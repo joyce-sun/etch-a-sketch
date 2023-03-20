@@ -1,3 +1,4 @@
+const DEFAULT = 16;
 const grid = document.querySelector('.grid');
 const changeGridSize = document.querySelector('.grid-size')
 
@@ -51,3 +52,5 @@ function drawOnGrid() {
 function clearGrid() {
     grid.innerHTML = "";
 }
+
+createGrid(DEFAULT);
