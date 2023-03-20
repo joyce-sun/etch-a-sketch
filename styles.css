@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'rondo';
+    src: URL('./rondo.ttf') format('truetype');
+}
+
+body {
+    font-family: 'rondo';
+}
+
 .grid {
     display: grid;
     margin: auto;

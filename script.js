@@ -27,13 +27,25 @@ function createGrid(size) {
 
 function drawOnGrid() {
     let boxes = document.querySelectorAll('.gridElement');
+    let isClicked = false;
 
-    boxes.forEach((box) => {
-        box.addEventListener('mouseover', () => {
-            box.style.backgroundColor = 'black';
-        })
+    grid.addEventListener('mousedown', e => {
+        isClicked = true;
     })
 
+    grid.addEventListener('mouseup', e => {
+        if (isClicked === true) {
+            isClicked = false;
+        }
+    })
+
+    boxes.forEach((box) => {
+        box.addEventListener('mousemove', () => {
+            if (isClicked === true) {
+                box.style.backgroundColor = 'black';
+            }
+        })
+    })
 }
 
 function clearGrid() {
