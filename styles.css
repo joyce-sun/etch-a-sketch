@@ -1,10 +1,12 @@
 .grid {
     display: grid;
+    margin: auto;
     background-color: pink;
+    width: 500px;
+    height: 500px;
 }
 
 .gridElement {
-    padding: 1em;
-    border: 1px solid black;
-    aspect-ratio: 1;
+    user-select: none;
+    border: 0.1px solid black;
 }
