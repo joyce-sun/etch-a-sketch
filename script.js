@@ -7,6 +7,7 @@ changeGridSize.addEventListener('click', () => {
         window.alert("ERROR: Please choose a number up to 100")
     }
     else {
+        clearGrid();
         createGrid(size);
     }
 } )
@@ -33,4 +34,8 @@ function drawOnGrid() {
         })
     })
 
+}
+
+function clearGrid() {
+    grid.innerHTML = "";
 }
