@@ -37,6 +37,7 @@ eraserMode.addEventListener('click', () => {
 
 colorPicker.addEventListener('click', () => {
     colorPicker.oninput = (e) => {
+        MODE = '';
         COLOR = e.target.value;
         colorPicker.style.backgroundColor = COLOR
     }
