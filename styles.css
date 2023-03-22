@@ -50,10 +50,31 @@ body {
 #color-picker::-webkit-color-swatch {
     border-radius: 50%;
     border: none;
+    box-shadow: 6px 5px 8px 0.5px rgba(0,0,0,0.5);
 }
 #color-picker::-moz-color-swatch {
     border-radius: 50%;
     border: none;
+    box-shadow: 6px 5px 8px 0.5px rgba(0,0,0,0.5);
+}
+
+.remote button {
+    width: 120px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #e94196;
+    padding: 12px 32px;
+    background-color: #ffe2ed;
+    font-family: 'barbie';
+    font-size: 18px;
+    color: #e94196;
+    letter-spacing: 3px;
+    box-shadow: 6px 5px 8px 0.5px rgba(0,0,0,0.5);
+}
+
+.remote button:active {
+    color: #ffe2ed;
+    background-color: #e94196;
 }
 
 .frame {
