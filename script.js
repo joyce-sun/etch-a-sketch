@@ -43,8 +43,9 @@ colorPicker.addEventListener('click', () => {
 slider.addEventListener('input', () => {
     let num = document.querySelector('#slider').value
     sliderValue.innerHTML = num;
-    MODE = '';
     clearGrid();
+    MODE = '';
+    COLOR = 'black';
     createGrid(num);
 })
 
