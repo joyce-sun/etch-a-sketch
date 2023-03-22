@@ -95,3 +95,7 @@ body {
 #right-knob {
     margin-left: 160px;
 }
+
+.slider {
+    font-family: 'Courier New', Courier, monospace;
+}

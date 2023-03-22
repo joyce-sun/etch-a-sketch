@@ -8,6 +8,8 @@ const pinkMode = document.querySelector('.pink-mode')
 const rgbMode = document.querySelector('.rgb-mode')
 const eraserMode = document.querySelector('.eraser-mode')
 const colorPicker = document.querySelector('#color-picker')
+const slider = document.querySelector('.slider')
+const sliderValue = document.querySelector('.grid-value')
 
 
 blackMode.addEventListener('click', () => {
@@ -24,6 +26,7 @@ pinkMode.addEventListener('click', () => {
 
 rgbMode.addEventListener('click', () => {
     MODE = 'RGB';
+    drawOnGrid();
 })
 
 eraserMode.addEventListener('click', () => {
@@ -35,21 +38,20 @@ eraserMode.addEventListener('click', () => {
 colorPicker.addEventListener('click', () => {
     colorPicker.oninput = (e) => COLOR = e.target.value;
     drawOnGrid();
-}
-)
+})
 
-
-
+slider.addEventListener('input', () => {
+    let num = document.querySelector('#slider').value
+    sliderValue.innerHTML = num;
+    MODE = '';
+    clearGrid();
+    createGrid(num);
+})
 
 changeGridSize.addEventListener('click', () => {
-    let size = prompt("Enter Grid Size (up to 100)")
-    if (size > 100 || isNaN(size)) {
-        window.alert("ERROR: Please choose a number up to 100")
-    }
-    else {
-        clearGrid();
-        createGrid(size);
-    }
+    MODE = '';
+    clearGrid();
+    createGrid(16);
 } )
 
 function createGrid(size) {
@@ -61,7 +63,7 @@ function createGrid(size) {
         gridSquare.classList.add("gridElement");
         grid.appendChild(gridSquare);
     }
-
+    drawOnGrid();
 }
 
 function drawOnGrid() {
