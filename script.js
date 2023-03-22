@@ -7,6 +7,7 @@ const blackMode = document.querySelector('.black-mode')
 const pinkMode = document.querySelector('.pink-mode')
 const rgbMode = document.querySelector('.rgb-mode')
 const eraserMode = document.querySelector('.eraser-mode')
+const colorPicker = document.querySelector('#color-picker')
 
 
 blackMode.addEventListener('click', () => {
@@ -30,6 +31,13 @@ eraserMode.addEventListener('click', () => {
     MODE = ''
     drawOnGrid();
 })
+
+colorPicker.addEventListener('click', () => {
+    colorPicker.oninput = (e) => COLOR = e.target.value;
+    drawOnGrid();
+}
+)
+
 
 
 
