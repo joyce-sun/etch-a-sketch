@@ -1,22 +1,34 @@
 let COLOR = 'black';
+let MODE = '';
 const DEFAULT = 16;
 const grid = document.querySelector('.grid');
 const changeGridSize = document.querySelector('.grid-size')
 const blackMode = document.querySelector('.black-mode')
 const pinkMode = document.querySelector('.pink-mode')
-const rbgMode = document.querySelector('.rainbow-mode')
+const rgbMode = document.querySelector('.rgb-mode')
+const eraserMode = document.querySelector('.eraser-mode')
+
 
 blackMode.addEventListener('click', () => {
     COLOR = 'black';
+    MODE = '';
+    drawOnGrid();
 })
 
 pinkMode.addEventListener('click', () => {
     COLOR = '#e94196';
+    MODE = ''
+    drawOnGrid();
 })
 
-pinkMode.addEventListener('click', () => {
-    let randomColor = randomRGB();
-    COLOR = randomColor;
+rgbMode.addEventListener('click', () => {
+    MODE = 'RGB';
+})
+
+eraserMode.addEventListener('click', () => {
+    COLOR = '#ffe2ed'
+    MODE = ''
+    drawOnGrid();
 })
 
 
@@ -41,7 +53,6 @@ function createGrid(size) {
         gridSquare.classList.add("gridElement");
         grid.appendChild(gridSquare);
     }
-    drawOnGrid();
 
 }
 
@@ -61,7 +72,10 @@ function drawOnGrid() {
 
     boxes.forEach((box) => {
         box.addEventListener('mousemove', () => {
-            if (isClicked === true) {
+            if ((isClicked === true) && (MODE === 'RGB')) {
+                box.style.backgroundColor = randomRGB();
+            }
+            else if ((isClicked === true) && (MODE === '')) {
                 box.style.backgroundColor = COLOR;
             }
         })
@@ -76,7 +90,7 @@ function randomRGB() {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
-    return "rgb(" + r + "," + g + "," + b + ")";
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 
