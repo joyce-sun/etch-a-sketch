@@ -36,7 +36,10 @@ eraserMode.addEventListener('click', () => {
 })
 
 colorPicker.addEventListener('click', () => {
-    colorPicker.oninput = (e) => COLOR = e.target.value;
+    colorPicker.oninput = (e) => {
+        COLOR = e.target.value;
+        colorPicker.style.backgroundColor = COLOR
+    }
     drawOnGrid();
 })
 
