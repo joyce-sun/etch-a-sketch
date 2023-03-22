@@ -71,10 +71,39 @@ body {
     letter-spacing: 3px;
     box-shadow: 6px 5px 8px 0.5px rgba(0,0,0,0.5);
 }
-
 .remote button:active {
     color: #ffe2ed;
     background-color: #e94196;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#slider {
+    margin: 0 0 15px 0;
+    -webkit-appearance: none;
+    background-color: #e94196;
+    border-radius: 8px;
+    width: 150px;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #ffe2ed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #e94196;
+}
+
+.slider .grid-value {
+    margin: 8px 0 0 0;
+    font-family: 'rondo';
+    color: #e94196;
+    font-size: 24px;
 }
 
 .frame {
@@ -146,6 +175,3 @@ body {
     margin-left: 160px;
 }
 
-.slider {
-    font-family: 'Courier New', Courier, monospace;
-}
